@@ -1,18 +1,37 @@
 <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Twilio API Interaction
+    </ion-title>
+  </ion-toolbar>
+  <script type="text/javascript" src="//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title>
-        Twilio
-      </ion-title>
+      <ion-title size="large">Twilio</ion-title>
+      <ion-progress-bar type="indeterminate" *ngIf="loading"></ion-progress-bar>
     </ion-toolbar>
   </ion-header>
-  
-  <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <ion-title size="large">Twilio</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <app-explore-container name="Twilio page"></app-explore-container>
-  </ion-content>
-  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Send me message via Twilio</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea [(ngModel)]="textMessage" placeholder="Enter your message here"></ion-textarea>
+      <ion-button size="small" color="secondary" (click)="onClick(1)" disabled="{{b1disabled()}}">Send<ion-icon name="send-outline"></ion-icon></ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Send message via Twilio</ion-card-title>
+      <ion-card-subtitle>Need to verify phone number first on trial account</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input [(ngModel)]="phoneNumber" placeholder="Phone Number" type="number"></ion-input>
+      <ion-textarea [(ngModel)]="textMessage2" placeholder="Enter your message here"></ion-textarea>
+      <ion-button size="small" color="secondary" (click)="onClick(2)" disabled="{{b2disabled()}}">Send<ion-icon name="send-outline"></ion-icon></ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

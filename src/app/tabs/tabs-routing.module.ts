@@ -12,16 +12,12 @@ const routes: Routes = [
         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-      },
-      {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },
-      {
         path: 'twilio1',
         loadChildren: () => import ('../twilio/twilio1.module').then(m => m.Twilio1Module)
+      },
+      {
+        path: 'mapbox1',
+        loadChildren: () => import ('../mapbox/mapbox1.module').then(m => m.Mapbox1Module)
       },
       {
         path: '',
