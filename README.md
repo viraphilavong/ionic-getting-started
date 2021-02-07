@@ -11,5 +11,3 @@ Create the following keys with the respective values from your twilio account \
 - MAPBOX_TOKEN \
 
 Start the app via npm start \
-Start server via node server.js \
-Start twilio listener via twilio phone-numbers:update "+19094734884" --sms-url="http://localhost:1337/sms" 
